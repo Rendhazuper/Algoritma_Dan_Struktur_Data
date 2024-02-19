@@ -3,7 +3,7 @@
 ## Praktikum Pemilihan
 
 Hasil output dari Program Menghitung Nilai Akhir :
-<img src="Laporan/pemilihan.png">
+<img src="..Laporan\pemilihan.png">
 
 ## Praktikum Perulangan
 
