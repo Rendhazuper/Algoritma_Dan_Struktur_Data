@@ -39,12 +39,14 @@ berikut adalah hasil output dari percobaan pertama, dimana hal ini dikarenakan t
     <img src="Gambar\Jawaban 1 nomor 4.1.png"> 
 
     berikut adalah hasil outputnya jika stok = 0 
-
-    ![alt text](image-1.png)
+    
+    <img src="Gambar\image-1.png"> 
+  
 
     dan berikut adalah hasil output jika stok kurang dari jml input
-
-    ![alt text](image-2.png)
+    
+    <img src="Gambar\image-2.png"> 
+    
 
 5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int? 
 
@@ -58,7 +60,9 @@ Pada percobaan ini saya membuat file baru bernama <b> Bukumain25.java </b> yang 
 ----
 Berikut adalah hasil output dari percobaan 2
 
-![alt text](image-3.png)
+
+<img src="Gambar\image-3.png"> 
+
 
 ### 2.2.2 Jawaban Pertanyaan
 ---
@@ -97,7 +101,8 @@ pada percobaan kali ini saya menambahkan objek baru yaitu <b> bk2 </b> seperti b
 ---
 output dari hasil penambahan kode diatas adalah sebagai berikut
 
-![alt text](image-4.png)
+<img src="Gambar\image-4.png"> 
+
 
 ### 2.3.2 Jawaban Pertanyaan
 ---
@@ -141,7 +146,170 @@ output dari hasil penambahan kode diatas adalah sebagai berikut
 5. Buat object baru dengan nama <b> buku(NamaMahasiswa) </b> menggunakan konstruktor berparameter dari class Buku!
 
         Buku25 bukurendha = new Buku25("Negeri Para Bedebah", "Tere Liye", 440, 5, 35000);
+
+### 2.4 Latihan Praktikum
+---
+Untuk membuat sistem pada class buku seperti pada class diagaram dibawah 
+
+<img src="Gambar\image-5.png"> 
+
+maka saya menambhakan 3 method dalam class buku
+    
+    int hitungHargaTotal(int jml){
+        jumlahbeli = jml;
+        total = harga * jml;
+        return total;
+
+    }
+
+<br>
+
+    double hitungDiskon(){
+        if (total > 150000) {
+            hargadiskon = total * 0.12;
+           
+        }else if(total > 75000 && total < 150000 ){
+            hargadiskon = total * 0.5;
+        }else if (total < 75000) {
+            hargadiskon = total * 0;
+        }
+        return hargadiskon;
+    }
+<br>
+
+    double hitungHargaBayar(){
+        bayar = total - hargadiskon;
+        return bayar;
+    }
+
+
+
+dan output dari penambahan 3 method pada clas <b> buku </b> adalah seperti berikut
+
+    Sisa Stok : 10
+    Harga : Rp 35000
+    Judul : Negeri Para Bedebah
+    Jumlah beli : 10
+    Harga total : 350000
+    dapatan diskon : 42000.0
+    Jumlah bayar : 308000.0
+
+---
+Untuk membuat program berdasarkan diagram class dibawah
+
+<img src="Gambar\Dragon.png"> 
+
+Saya membuat dua class yaitu <b> class Dragon </b> dan <b> class Dragon main </b>.
+
+Pada <b> class Dragon </b> berisi kode seperti berikut
+
+    public class Dragon {
+        int x,y,width, height;
+
+
+    void moveLeft(){
+        x -= 1;
+        if (x < 0) {
+            detectCollision();
+        }
+    }
+
+    void moveRight(){
+        x += 1;
+        if (x > width) {
+            detectCollision();
+        }
+    }
+
+    void moveUp(){
+        y -= 1;
+        if (y > 0) {
+            detectCollision();
+        }
+    }
+
+    void moveDown(){
+        y += 1;
+        if (y > 0) {
+            detectCollision();
+        }
+    }
+
+    void printPosition(){
+        System.out.print("your position now");
+        System.out.println("(" + x + "," +y+ ")");
         
+    }
+
+    void detectCollision(){
+            System.out.println("Game over");
+            System.exit(0);
+        }
+        
+    }
+
+
+
+lalu pada <b> class dragonmain </b> berisi kode seperti berikut
+
+      
+    
+    public static void main(String[] args) {
+        Scanner key = new Scanner(System.in);
+        Dragon D1 = new Dragon();
+        char move;
+        D1.width = 10;
+        D1.height = 10;
+        int height = D1.height;
+        int width = D1.width;
+        System.out.print("Masukkan koordinat X : " );
+        D1.x = key.nextInt();
+        int x = D1.x;
+        System.out.print("Masukkan koordinat y : ");
+        D1.y = key.nextInt();
+        int y = D1.y;
+        D1.printPosition();
+        while(x >  0 || x < width || y >  0 || y < height){
+            System.out.println("move where ? (L/R/U/D)");
+            key.nextLine();
+            move = key.next().charAt(0);
+            switch (move) {
+                case 'L':
+                D1.moveLeft();
+                D1.printPosition();
+                    break;
+            
+                case 'R':
+                D1.moveRight();
+                D1.printPosition();
+                    break;
+                
+                case 'U':
+                D1.moveUp();
+                D1.printPosition();
+                    break;
+
+                case 'D':
+                D1.moveDown();
+                D1.printPosition();
+                    break;
+            }
+            
+        };
+    }
+    
+Output dari kode tersebut adalah sebagai berikut
+
+contoh output jika <b> dragon </b> bergerak ke kiri hingga X menjadi 0 
+
+<img src="Gambar\Dragon kiri.png">
+
+
+
+
+
+
+
     
 
 

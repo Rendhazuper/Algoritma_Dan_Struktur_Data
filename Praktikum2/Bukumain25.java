@@ -21,7 +21,8 @@ public class Bukumain25 {
         System.out.println();
         bk2.tampilInformasi();
 
-        Buku25 bukurendha = new Buku25("Negeri Para Bedebah", "Tere Liye", 440, 5, 35000);
+        Buku25 bukurendha = new Buku25("Negeri Para Bedebah", "Tere Liye", 440, 10 , 35000);
+        
     }
 
 }
