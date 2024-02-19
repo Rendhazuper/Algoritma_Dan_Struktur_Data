@@ -13,6 +13,10 @@ public class Perulangan {
         double digit = duadigit % 100;
         System.out.println("N = "+digit);
 
+        if (digit < 10) {
+            digit += 10;
+        }
+
         for (int i = 1; i <= digit; i++) {
             if (i != 6 && i != 10) {
                 if (i % 2 == 0) {
