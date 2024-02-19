@@ -3,49 +3,46 @@
 ## Praktikum Pemilihan
 
 Hasil output dari Program Menghitung Nilai Akhir :
-<img src="..Laporan\pemilihan.png">
+<img src="Laporan\Pemilihan1.png"> 
+
+<img src="Laporan\Pemilihan2.png">
 
 ## Praktikum Perulangan
 
 Hasil output dari Program Perulangan :
-<img src="perulangan1.png">
+
+<img src="Laporan\Perulangan.png">
 
 ## Praktikum Array
 
 Hasil output dari Program Menghitung IP Semester
-<img src="array.png">
+
+<img src="Laporan\Array.png">
 
 ## Praktikum Fungsi
 
 Hasil output dari Program Toko Bunga
 
 #### Pendapatan cabang
+<img src="Laporan\fungsi1.png">
 
-1. <img src="fungsipen1.png">
-2. <img src="fungsipen2.png">
-3. <img src="fungsipen3.png">
-4. <img src="fungsipen4.png">
 
 #### Stok bunga tiap cabang
 
-1. <img src="fungsistok1.png">
-2. <img src="fungsistok2.png">
-3. <img src="fungsistok3.png">
-4. <img src="fungsistok4.png">
+<img src="Laporan\fungsi2.png">
 
 ## Tugas 1
 
 Hasil output dari Program Plat Mobil
 
-<img src = "tugas11.png">
-<img src = "tugas12.png">
+<img src = "Laporan\tugas1.png">
 
 ## Tugas 2
 
 Hasil output dari Program JKW
 
-<img src = "tugas21.png"><br>
+<img src = "Laporan\tugas2.1.png"> <br>
 
-<img src = "tugas22.png"><br>
+<img src = "Laporan\tugas2.2.png"> <br>
 
-<img src = "tugas23.png">
+<img src = "Laporan\tugas2.3.png">
