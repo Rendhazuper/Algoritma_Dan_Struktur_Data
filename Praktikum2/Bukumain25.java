@@ -15,5 +15,11 @@ public class Bukumain25 {
         bk1.terjual(5);
         bk1.gantiHarga(60000);
         bk1.tampilInformasi();
+
+        Buku25 bk2 = new Buku25("Self Reward", "Maheera Ayesha", 160, 29, 59000);
+        bk2.terjual(11);
+        System.out.println();
+        bk2.tampilInformasi();
     }
+
 }
