@@ -4,7 +4,7 @@ public class Buku25 {
     
     String judul, pengarang; 
     int halaman, stok, harga, total, jumlahbeli;
-    double hargadiskon, bayar; 
+    double hargadiskon, bayar, VolumePrism; 
 
     public Buku25(){
 
@@ -78,5 +78,12 @@ public class Buku25 {
     int gantiHarga(int hrg){
         harga = hrg;
         return harga;
+    }
+
+    double HitungAlasPrisma (double alasSegi, double tinggiSegi){
+
+        VolumePrism = 0.5 * alasSegi * tinggiSegi;
+
+        return VolumePrism;
     }
 }
