@@ -1,0 +1,5 @@
+1. pada statement if jika nilai n sama dengan 1 maka nilai kembalian adalah 1 karena 1 faktorial hasilnya tetap satu, berbeda dengan else adalah mencari hasil fakto dengan mengalikan nilai n dengan n-1 
+
+2. bisa menggunkaan while, do while, dan perulangan lainnya. bukti nanti di copy
+
+3. fakto *= i adalah untuk brute force karena kita mencari hasilnya satu persatu sedangkan fakto = n * faktorialDC(n-1) adalah untuk devide and conquer karena kita mencari kembaliannya secara langsung
