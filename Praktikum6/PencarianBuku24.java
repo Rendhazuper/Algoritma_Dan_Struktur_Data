@@ -103,6 +103,14 @@ public class PencarianBuku24 {
             }
             return -1;
         }
+
+        void tampildata(int i){
+            if (i != -1) {
+                System.out.println("ketemu di " + i );
+            }else{
+                System.out.println("tidak ketemu");
+            }
+        }
     
     }
 
