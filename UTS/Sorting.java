@@ -39,7 +39,7 @@ public class Sorting {
       }
      }
 
-     int findBynarySearch(int [] data, int cari, int left, int right) {
+     int findBinarySearch(int [] data, int cari, int left, int right) {
 
         if (right >= left) {
             int mid = (right + left) / 2;
@@ -47,28 +47,22 @@ public class Sorting {
             if (cari == data[mid]) {
                 return mid; 
             } else if (cari < data[mid]) {
-                return findBynarySearch(data, cari, left, mid - 1);
+                return findBinarySearch(data, cari, left, mid - 1);
             } else {
-                return findBynarySearch(data, cari, mid + 1, right);
+                return findBinarySearch(data, cari, mid + 1, right);
             }
         }
         return -1;
     }
   
     
-
-    // void insertionSort(int[]data){
-    //     for (int i = 1; i < data.length; i++) {
-    //          int key = data[i];
-    //         int j = i; 
-    //         while (j > 0 && data [j - 1] > key){
-    //             data[j] = data [j - 1];
-    //             j--;
-    //         }
-    //         data[j] = key;
-
-    //     }
-    // }
+    void hasilbinary(int index) {
+        if (index != -1) {
+            System.out.println("Elemen ditemukan pada indeks: " + index);
+        } else {
+            System.out.println("Elemen tidak ditemukan dalam array.");
+        }
+    }
 
     void printArray(int data[]){
         for (int i = 0; i < data.length; i++) {
