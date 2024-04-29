@@ -64,7 +64,7 @@ public Gudang24 (int kapasitas){
     }
     public Barang24 lihatBarangTerbawah(){
         if (!cekKosong()) {
-            Barang24 barangTerbawah = tumpukan[size - top];
+            Barang24 barangTerbawah = tumpukan[top-top];
             System.out.println("Barang teratas : "+barangTerbawah.nama);
             return barangTerbawah;
         }else{
