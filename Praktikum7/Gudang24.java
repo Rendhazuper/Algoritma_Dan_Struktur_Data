@@ -62,6 +62,17 @@ public Gudang24 (int kapasitas){
 
         }
     }
+    public Barang24 lihatBarangTerbawah(){
+        if (!cekKosong()) {
+            Barang24 barangTerbawah = tumpukan[size - top];
+            System.out.println("Barang teratas : "+barangTerbawah.nama);
+            return barangTerbawah;
+        }else{
+            System.out.println("Tumpukan barang kosong");
+            return null;
+
+        }
+    }
 
     public  void tampilkanbarang() {
         if(!cekKosong()){
