@@ -87,6 +87,40 @@ public Gudang24 (int kapasitas){
             System.out.println("Tumpukan barang kosong");
         }
     }
+    public void cariKode(int kd) {
+        int a = -1;
+        for (int i = 0; i < tumpukan.length; i++) {
+            if (kd == tumpukan[i].kode) {
+                a = i;
+                break;
+            }
+        }
+        if (a == -1) {
+            System.out.println("Barang tak ditemukan");
+        } else {
+            System.out.println("Detail informasi dari kode barang " + kd);
+            System.out.println("Nama barang: " + tumpukan[a].nama);
+            System.out.println("Kategori barang: " + tumpukan[a].kategori);
+        }
+
+    }
+
+    public void cariNama(String cari) {
+        int a = -1;
+        for (int i = 0; i < tumpukan.length; i++) {
+            if (cari.equalsIgnoreCase(tumpukan[i].nama)) {
+                a = i;
+                break;
+            }
+        }
+        if (a == -1) {
+            System.out.println("Barang tak ditemukan");
+        } else {
+            System.out.println("Detail informasi dari kode barang " + cari);
+            System.out.println("Kode barang: " + tumpukan[a].kode);
+            System.out.println("Kategori barang: " + tumpukan[a].kategori);
+        }
+    }
 
     public String KonversiDesimalkeBiner(int kode){
         StackKonversi24 stack = new StackKonversi24();

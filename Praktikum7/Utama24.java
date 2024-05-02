@@ -11,7 +11,8 @@ public class Utama24 {
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Tampilkan tumpukan barang teratas ");
             System.out.println("5. Tampilkan tumpukan barang terbawah");
-            System.out.println("6. Keluar");
+            System.out.println("6. Cari barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih operasi :");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
