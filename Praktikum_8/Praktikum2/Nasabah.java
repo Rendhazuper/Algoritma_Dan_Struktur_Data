@@ -53,6 +53,17 @@ public class Nasabah {
             System.out.println("Queue masih kosong");
         }
     }
+
+    public void peekrear(){
+        if (!IsEmpty()) {
+            System.out.println("Antrian terakhir : " +data[rear].norek + " " + data[rear].nama 
+            + " " + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo); 
+            
+        }else{
+            System.out.println("Queue masih kosong");
+        }
+    }
+
     public void print(){
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");

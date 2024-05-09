@@ -11,6 +11,7 @@ public class QueueMain {
         System.out.println("2. Antrian Keluar");
         System.out.println("3. Cek Antrian Terdepan");
         System.out.println("4. Cek Semua Antrian");
+        System.out.println("5. Cek Antrian Belakang");
         System.out.println("---------------------------------");
     }
 
@@ -57,6 +58,8 @@ public class QueueMain {
             case 4:
             antri.print();
             break;
+            case 5:
+            antri.peekrear();
         }
     } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4); 
 }

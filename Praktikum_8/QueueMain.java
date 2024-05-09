@@ -33,7 +33,7 @@ public class QueueMain {
                     break;
                 case 2:
                 int dataKeluar = Q.Dequeue();
-                if (dataKeluar != 0){ 
+                if (dataKeluar != -1){ 
                     System.out.println("Data yang dikeluarkan: " + dataKeluar);
                     break;
                 }
