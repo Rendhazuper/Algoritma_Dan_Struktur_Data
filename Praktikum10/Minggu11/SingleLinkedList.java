@@ -1,4 +1,4 @@
-package Praktikum.Praktikum_10.Minggu11;
+package Praktikum.Praktikum10.Minggu11;
 
 import org.w3c.dom.Node;
 

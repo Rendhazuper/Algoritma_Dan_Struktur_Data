@@ -1,4 +1,4 @@
-package Praktikum.Praktikum_10.Minggu11;
+package Praktikum.Praktikum10.Minggu11;
 
 public class node {
     int data;

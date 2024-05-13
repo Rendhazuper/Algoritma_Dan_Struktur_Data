@@ -1,24 +1,26 @@
-package Praktikum.Praktikum_8.Tugas;
+package Praktikum.Praktikum8.Praktikum2;
 
-import Praktikum.Praktikum4.pangkat;
-import Praktikum.Praktikum_8.Praktikum2.Nasabah;
-
-public class Pembeli {
-    String nama;
-    int noHP, front, rear, size, max;
-    Pembeli[]antrian;
-
-    Pembeli (String nama, int noHP){
-        this.nama  = nama;
-        this.noHP = noHP;
+public class Nasabah {
+    String norek , nama, alamat;
+    int umur, front, rear, size, max;
+    double saldo; 
+    Nasabah[] data;
+    
+    Nasabah (String norek, String nama, String alamat, int umur, double saldo){
+        this.norek = norek;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.umur = umur;
+        this.saldo = saldo;
     }
 
-    Pembeli(){
+    Nasabah(){
 
     }
-     public Pembeli(int n){
+
+    public Nasabah(int n){
         max = n;
-        antrian = new Pembeli[max];
+        data = new Nasabah[max];
         size = 0;
         front = rear = -1;
     }
@@ -44,7 +46,8 @@ public class Pembeli {
 
     public void peek(){
         if (!IsEmpty()) {
-            System.out.println("Antrian terdepan : " + antrian[front].nama + " " + antrian[front].noHP); 
+            System.out.println("Elemen Terdepan : "+data[front].norek + " " + data[front].nama 
+            + " " + data[front].alamat + " " + data[front].umur + " " + data[front].saldo); 
             
         }else{
             System.out.println("Queue masih kosong");
@@ -53,33 +56,26 @@ public class Pembeli {
 
     public void peekrear(){
         if (!IsEmpty()) {
-            System.out.println("Antrian terakhir : " + antrian[rear].nama + " " + antrian[rear].noHP); 
+            System.out.println("Antrian terakhir : " +data[rear].norek + " " + data[rear].nama 
+            + " " + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo); 
             
         }else{
             System.out.println("Queue masih kosong");
         }
     }
 
-    public void peekposition(String nama){
-        int cari = -1;
-        for (int i = 0; i < antrian.length; i++) {
-            if (antrian[i].nama.equals(nama)) {
-                cari = i + 1;
-                System.out.println("Posisi antrian  : " + nama + " adalah " + cari);
-            }
-            
-        }
-    }
-    public void Daftarpembeli(){
+    public void print(){
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
         }else{
             int i = front;
             while (i != rear) {
-                System.out.println(antrian[i].nama + " " + antrian[i].noHP);
+                System.out.println(data[i].norek + " " + data[i].nama 
+                + " " + data[i].alamat + " " + data[i].umur + " " + data[i].saldo);
                 i = (i + 1) % max;
             }
-            System.out.println(antrian[i].nama + " " + antrian[i].noHP);
+            System.out.println(data[i].norek + " " + data[i].nama 
+            + " " + data[i].alamat + " " + data[i].umur + " " + data[i].saldo);
             System.out.println("jumlah elemen = " + size);
         }
     }
@@ -94,7 +90,7 @@ public class Pembeli {
         }
     }
 
-    public void Enqueue(Pembeli  antri){
+    public void Enqueue(Nasabah  dt){
         if (IsFull()) {
             System.out.println("Queue sudah penuh");
         }else{
@@ -107,17 +103,17 @@ public class Pembeli {
                     rear++;
                 }
             }
-            antrian [rear] = antri;
+            data[rear] = dt;
             size++;
         }
     }
 
-    public Pembeli Dequeue(){
-        Pembeli antri = new Pembeli();
+    public Nasabah Dequeue(){
+        Nasabah dt = new Nasabah();
         if(IsEmpty()){
             System.out.println("Queue Masih Kosong");
         }else{
-            antri = antrian[front];
+            dt = data[front];
             size--;
             if (IsEmpty()) {
                 front = rear = -1;
@@ -129,6 +125,6 @@ public class Pembeli {
                 }
             }
         }
-        return antri;
+        return dt;
     }
 }

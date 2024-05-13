@@ -1,4 +1,4 @@
-package Praktikum.Praktikum_11;
+package Praktikum.Praktikum11;
 
 public class DoubleLinkedListmain {
     public static void main(String[] args ) throws Exception {

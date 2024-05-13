@@ -1,4 +1,4 @@
-package Praktikum.Praktikum_11.Tugas;
+package Praktikum.Praktikum11.Tugas;
 
 /**
  * Vaksin

@@ -1,19 +1,28 @@
-package Praktikum.Praktikum_8;
+package Praktikum.Praktikum8.Tugas;
 
-/**
- * Queue
- */
-public class Queue {
+import Praktikum.Praktikum4.pangkat;
+import Praktikum.Praktikum8.Praktikum2.Nasabah;
 
-    int[] data;
-    int front, rear, size, max; 
+public class Pembeli {
+    String nama;
+    int noHP, front, rear, size, max;
+    Pembeli[]antrian;
 
-    public Queue(int n){
-        max = n;
-        data = new int[max];
-        size = 0;
-        front = rear = -1; 
+    Pembeli (String nama, int noHP){
+        this.nama  = nama;
+        this.noHP = noHP;
     }
+
+    Pembeli(){
+
+    }
+     public Pembeli(int n){
+        max = n;
+        antrian = new Pembeli[max];
+        size = 0;
+        front = rear = -1;
+    }
+
     public boolean IsEmpty(){
         if(size == 0){
             return true;
@@ -35,23 +44,42 @@ public class Queue {
 
     public void peek(){
         if (!IsEmpty()) {
-            System.out.println("Elemen Terdepan : "+data[front]);
+            System.out.println("Antrian terdepan : " + antrian[front].nama + " " + antrian[front].noHP); 
             
         }else{
             System.out.println("Queue masih kosong");
         }
     }
-    public void print(){
+
+    public void peekrear(){
+        if (!IsEmpty()) {
+            System.out.println("Antrian terakhir : " + antrian[rear].nama + " " + antrian[rear].noHP); 
+            
+        }else{
+            System.out.println("Queue masih kosong");
+        }
+    }
+
+    public void peekposition(String nama){
+        int cari = -1;
+        for (int i = 0; i < antrian.length; i++) {
+            if (antrian[i].nama.equals(nama)) {
+                cari = i + 1;
+                System.out.println("Posisi antrian  : " + nama + " adalah " + cari);
+            }
+            
+        }
+    }
+    public void Daftarpembeli(){
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
-            System.exit(0);
         }else{
             int i = front;
             while (i != rear) {
-                System.out.print(data[i] + " ");
+                System.out.println(antrian[i].nama + " " + antrian[i].noHP);
                 i = (i + 1) % max;
             }
-            System.out.println(data[i] + " ");
+            System.out.println(antrian[i].nama + " " + antrian[i].noHP);
             System.out.println("jumlah elemen = " + size);
         }
     }
@@ -66,10 +94,9 @@ public class Queue {
         }
     }
 
-    public void Enqueue(int dt){
+    public void Enqueue(Pembeli  antri){
         if (IsFull()) {
             System.out.println("Queue sudah penuh");
-            System.exit(0);
         }else{
             if(IsEmpty()){
                 front = rear = 0;
@@ -80,18 +107,17 @@ public class Queue {
                     rear++;
                 }
             }
-            data[rear] = dt;
+            antrian [rear] = antri;
             size++;
         }
     }
 
-    public int Dequeue(){
-        int dt = 0;
+    public Pembeli Dequeue(){
+        Pembeli antri = new Pembeli();
         if(IsEmpty()){
             System.out.println("Queue Masih Kosong");
-            System.exit(0);
         }else{
-            dt = data[front];
+            antri = antrian[front];
             size--;
             if (IsEmpty()) {
                 front = rear = -1;
@@ -103,7 +129,6 @@ public class Queue {
                 }
             }
         }
-        return dt;
+        return antri;
     }
 }
-

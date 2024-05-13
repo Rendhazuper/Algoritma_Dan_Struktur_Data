@@ -1,4 +1,4 @@
-package Praktikum.Praktikum_8;
+package Praktikum.Praktikum8;
 
 import java.util.*;
 

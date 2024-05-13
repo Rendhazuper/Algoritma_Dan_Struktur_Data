@@ -1,8 +1,8 @@
-package Praktikum.Praktikum_8.Tugas;
+package Praktikum.Praktikum8.Tugas;
 
 import java.util.Scanner;
 
-import Praktikum.Praktikum_8.Praktikum2.Nasabah;
+import Praktikum.Praktikum8.Praktikum2.Nasabah;
 
 /**
  * Queuemain

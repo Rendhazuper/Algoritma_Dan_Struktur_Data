@@ -1,30 +1,19 @@
-package Praktikum.Praktikum_8.Praktikum2;
+package Praktikum.Praktikum8;
 
-public class Nasabah {
-    String norek , nama, alamat;
-    int umur, front, rear, size, max;
-    double saldo; 
-    Nasabah[] data;
-    
-    Nasabah (String norek, String nama, String alamat, int umur, double saldo){
-        this.norek = norek;
-        this.nama = nama;
-        this.alamat = alamat;
-        this.umur = umur;
-        this.saldo = saldo;
-    }
+/**
+ * Queue
+ */
+public class Queue {
 
-    Nasabah(){
+    int[] data;
+    int front, rear, size, max; 
 
-    }
-
-    public Nasabah(int n){
+    public Queue(int n){
         max = n;
-        data = new Nasabah[max];
+        data = new int[max];
         size = 0;
-        front = rear = -1;
+        front = rear = -1; 
     }
-
     public boolean IsEmpty(){
         if(size == 0){
             return true;
@@ -46,36 +35,23 @@ public class Nasabah {
 
     public void peek(){
         if (!IsEmpty()) {
-            System.out.println("Elemen Terdepan : "+data[front].norek + " " + data[front].nama 
-            + " " + data[front].alamat + " " + data[front].umur + " " + data[front].saldo); 
+            System.out.println("Elemen Terdepan : "+data[front]);
             
         }else{
             System.out.println("Queue masih kosong");
         }
     }
-
-    public void peekrear(){
-        if (!IsEmpty()) {
-            System.out.println("Antrian terakhir : " +data[rear].norek + " " + data[rear].nama 
-            + " " + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo); 
-            
-        }else{
-            System.out.println("Queue masih kosong");
-        }
-    }
-
     public void print(){
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
+            System.exit(0);
         }else{
             int i = front;
             while (i != rear) {
-                System.out.println(data[i].norek + " " + data[i].nama 
-                + " " + data[i].alamat + " " + data[i].umur + " " + data[i].saldo);
+                System.out.print(data[i] + " ");
                 i = (i + 1) % max;
             }
-            System.out.println(data[i].norek + " " + data[i].nama 
-            + " " + data[i].alamat + " " + data[i].umur + " " + data[i].saldo);
+            System.out.println(data[i] + " ");
             System.out.println("jumlah elemen = " + size);
         }
     }
@@ -90,9 +66,10 @@ public class Nasabah {
         }
     }
 
-    public void Enqueue(Nasabah  dt){
+    public void Enqueue(int dt){
         if (IsFull()) {
             System.out.println("Queue sudah penuh");
+            System.exit(0);
         }else{
             if(IsEmpty()){
                 front = rear = 0;
@@ -108,10 +85,11 @@ public class Nasabah {
         }
     }
 
-    public Nasabah Dequeue(){
-        Nasabah dt = new Nasabah();
+    public int Dequeue(){
+        int dt = 0;
         if(IsEmpty()){
             System.out.println("Queue Masih Kosong");
+            System.exit(0);
         }else{
             dt = data[front];
             size--;
@@ -128,3 +106,4 @@ public class Nasabah {
         return dt;
     }
 }
+
