@@ -73,6 +73,7 @@ public class DoubleLinkedLists {
     public int size(){
         return size;
     }
+
     public void clear(){
         head = null;
         size = 0; 
@@ -167,7 +168,7 @@ public class DoubleLinkedLists {
             throw new Exception("Nilai indeks di luar batas");
         }
         Node current = head;
-        for (int i = 0; i < index; i++) {
+        for (int i = 1; i < index; i++) {
             current = current.next;
         }
         return current.data;

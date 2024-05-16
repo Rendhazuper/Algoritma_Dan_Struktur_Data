@@ -3,24 +3,9 @@ package Praktikum.Praktikum11;
 public class DoubleLinkedListmain {
     public static void main(String[] args ) throws Exception {
         DoubleLinkedLists dll = new DoubleLinkedLists();
-        dll.addLast(50);
-        dll.addLast(40);
-        dll.addLast(10);
-        dll.addLast(20);
+        dll.addFirst(3);
+        dll.add(40,0);
         dll.print();
-        System.out.println("Size : "+ dll.size());
-        System.out.println("========================");
-        dll.removeFirst();
-        dll.print();
-        System.out.println("Size : "+ dll.size());
-        System.out.println("========================");
-        dll.removeLast();        
-        dll.print();
-        System.out.println("Size : "+ dll.size());
-        System.out.println("========================");
-        dll.remove(1);
-        dll.print();
-        System.out.println("Size : "+ dll.size());
-
+        System.out.println("data indeks ke - 1 pada linked list adalah : "+dll.get(1));
     }
 }
