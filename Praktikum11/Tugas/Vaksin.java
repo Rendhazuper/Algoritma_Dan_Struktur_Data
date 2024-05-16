@@ -63,7 +63,7 @@ public class Vaksin {
             }
             System.out.println("sisa antrian : " + size);
         }else{
-            System.out.println("Linked list kosong");
+            System.out.println("Antrian kosong");
         }
     }
 
