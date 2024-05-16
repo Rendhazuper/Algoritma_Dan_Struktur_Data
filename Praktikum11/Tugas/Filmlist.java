@@ -165,15 +165,18 @@ public class Filmlist {
         }
         public void search(int key) throws Exception{ 
             Film current = head; 
+            int posisi = 1;
             while (current != null) {
                 if (current.id == key) {
-                    System.out.println("Film found:");
+                    System.out.println("Data ID Film : " + key + "berada di node ke-" + posisi);
+                    System.out.println("IDENTITAS:");
                     System.out.println("id Film : " + current.id);
-                    System.out.println("Judul : " + current.judul);
-                    System.out.println("Rating : " + current.rating); 
+                    System.out.println("Judul Film : " + current.judul);
+                    System.out.println("IMDB Rating : " + current.rating); 
                     return;
                 }
                 current = current.next; 
+                posisi++;
             }
             throw new Exception("Data Film tidak ditemukan");
         }

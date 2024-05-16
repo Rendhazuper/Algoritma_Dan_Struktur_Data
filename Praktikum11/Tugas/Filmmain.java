@@ -66,7 +66,7 @@ public class Filmmain {
             film.cetak();
             break;
             case 8:
-            System.out.print("Masukkan id film yang dcari : ");
+            System.out.print("Masukkan id film yang dicari : ");
             int keysearch = input.nextInt();
             film.search(keysearch);
             break;
