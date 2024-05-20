@@ -79,7 +79,7 @@ public class Filmlist {
                 current.prev = databaru;
                 head = databaru;
             }else{
-                Film databaru = new Film(current.prev, id, judul, rating, current);
+                Film databaru = new Film(current.prev, id, judul, rating, null);
                 databaru.prev = current.prev;
                 databaru.next = current;
                 current.prev.next = databaru;
