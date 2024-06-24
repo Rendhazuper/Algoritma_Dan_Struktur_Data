@@ -71,58 +71,31 @@
 
     >Graph Matriks
 
-3. Apa maksud dari dua baris kode b
+3. Apa maksud dari dua baris kode berikut ![alt text](image.png)
 
-        Node tmp = head.next;
+     >Dua baris kode tersebut memiliki maksud untuk menambahkan edge dalam graph. Baris pertama gdg.makeEdge(1, 2, 70); menambahkan edge dari vertex 1 ke vertex 2 dengan bobot 70. Baris kedua gdg.makeEdge(2, 1, 80); menambahkan edge dari vertex 2 ke vertex 1 dengan bobot 80.
 
-        head.next = tmp.next;
-        tmp.next.prev = head;
+4. Modifikasi kode program sehingga terdapat method untuk menghitung degree, termasuk 
+inDegree dan outDegree! 
 
-    >karena tidak ada set null
-
-4. Jelaskan fungsi kode program berikut ini pada fungsi __remove!__ 
-
-        current.prev.next = current.next;
-        current.next.prev = current.prev;
-
-    >Node tersebut berada di tengah tengah dimana node tersebut prev dan next nya tidak null, sehingga ketika node tersebut di remove next dari node sebelumnya menjadi current.next, dan prev dari node selanjutnya menjadi current.prev
-
-### 12.4 Praktikum 3
-
-### 12.4.2 Verifikasi Hasil Percobaan
----
-
-<img src="Gambar\varifikasi3.png">
-
----
-1. Jelaskan method __size()__ pada class DoubleLinkedList!
-
-    >method size() berfungsi untuk mengembalikan nilai untuk ditampilkan sesuai dengan kondisi size pada saat itu
-
-2. Jelaskan cara mengatur indeks pada double linked lists supaya dapat dimulai dari indeks ke-1!
-
-    >dengan mengubah looping for dimana i dimulai dari 1
-
-        for (int i = 1; i < index; i++)
-
-3. Jelaskan perbedaan karakteristik fungsi __Add__ pada Double Linked Lists dan Single Linked Lists!  
-
-    >SLL hanya memilik isatu referensi yaitu next, sedangkan DLL memiliki dua referensi yaitu prev dan next
-
-4. Jelaskan perbedaan logika dari kedua kode program di bawah ini!
-
-        (a)
-        public boolean isEmpty(){
-            if(size == 0){
-                return true;
-            }else {
-                return false;
+        public void degree(int a) {
+        int totIn = 0, totOut = 0;
+        
+        for (int i = 0; i < vertex; i++) {
+            // inDegree
+            if (matrix[i][a] != 0) {
+                totIn++;
             }
-        } 
+            // outDegree
+            if (matrix[a][i] != 0) {
+                totOut ++;
+            }
+        }
 
-        (b)
-        public boolean isEmpty(){
-            return head == null;
-        } 
+        System.out.println("InDegree dari Gedung " + (char) ('A' + a) + ": " + totIn);
+        System.out.println("OutDegree dari Gedung " + (char) ('A' + a) + ": " + totOut);
+        System.out.println("Degree dari Gedung " + (char) ('A' + a) + ": " + (totIn + totOut));
+    }
 
-    >(a) isEmpty() digunakan untuk mengecek kosong tidaknya data berdasarkan size, jika size = 0 maka true, jika tidak maka false, (b) isEmpty() diguankan untuk mengecek kosong tidaknya data berdasarkan head, jika head == null maka true, jika tidak maka false
+
+

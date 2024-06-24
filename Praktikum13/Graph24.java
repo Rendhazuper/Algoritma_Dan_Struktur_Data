@@ -4,64 +4,100 @@ public class Graph24 {
     int vertex;
     DoubleLinkedList24 list[];
 
-    public Graph24(int v){
+    public Graph24(int v) {
         vertex = v;
         list = new DoubleLinkedList24[v];
-         for (int i = 0; i < v; i++) {
-              list[i] = new DoubleLinkedList24();
-        } 
+        for (int i = 0; i < v; i++) {
+            list[i] = new DoubleLinkedList24();
+        }
     }
 
-    public void addEdge(int asal, int tujuan, int jarak){
-        list[asal].addFirst(tujuan, jarak);
-        // list[tujuan].addFirst(asal, jarak);
-        
+    public void addEdge(int a, int t, int j) {
+        list[a].addFirst(t, j);
+        // list[t].addFirst(a, j);
+
     }
 
-    public void degree(int asal) throws Exception{
-        int k, totalin = 0, totalOut = 0;
+    public void degree(int a) throws Exception {
+        int k, totIN = 0, totOUT = 0;
         for (int i = 0; i < vertex; i++) {
-            //inDegree
+            // inDegree
             for (int j = 0; j < list[i].size(); j++) {
-                if (list[i].get(j) == asal) {
-                    ++totalin;
+                if (list[i].get(j) == a) {
+                    ++totIN;
                 }
             }
-            for (k = 0; k < list[asal].size(); k++) {
-                list[asal].get(k);
+            // outDegree
+            for (k = 0; k < list[a].size(); k++) {
+                list[a].get(k);
             }
-            totalOut = k;
+            totOUT = k;
         }
-        System.out.println("Indegree dari gedung " + (char) ('A' + asal) + ": " + totalin);
-        System.out.println("OutDegree dari gedung " + (char) ('A' + asal) + ": " + totalOut);
-        System.out.println("Degree dari gedung " + (char) ('A' + asal) + ": " + (totalin + totalOut));
+        System.out.println("InDegree dari Gedung " + (char) ('A' + a) + ": " + totIN);
+        System.out.println("OutDegree dari Gedung " + (char) ('A' + a) + ": " + totOUT);
+        System.out.println("Degree dari Gedung " + (char) ('A' + a) + ": " + (totIN + totOUT));
+        // System.out.println("Degree dari Gedung " + (char) ('A' + a) + ": " +
+        // list[a].size());
     }
-    public void removeEdge(int asal, int tujuan) throws Exception{
-        for (int i = 0; i < vertex; i++) {
-            if (i == tujuan) {
-                list[asal].remove(tujuan);
-            }
-        }
-    }
-   
 
-    public void removeAllEdges(){
+    public void remEdge(int a, int t) throws Exception {
+        for (int i = 0; i < vertex; i++) {
+            if (i == t) {
+                list[a].remove(t);
+            }
+        }
+
+    }
+
+    public void remAllEdge() {
         for (int i = 0; i < vertex; i++) {
             list[i].clear();
         }
-        System.out.println("graf berhasil dikosongkan");
+        System.out.println("Graf berhasil dikosongkan");
     }
 
-    public void printGraph() throws Exception{
+    public void printGraph() throws Exception {
         for (int i = 0; i < vertex; i++) {
             if (list[i].size() > 0) {
-                System.out.println("Gedung " + (char) ('A' + i) + " terhubung dengan ");
+                System.out.print("Gedung " + (char) ('A' + i) + " terhubung dengan ");
                 for (int j = 0; j < list[i].size(); j++) {
-                    System.out.print((char) ('A' + list[i].get(j)) + " (" + list[i].getJarak(j) + " m), ");
+                    System.out.print((char) ('A' + list[i].get(j)) + " (" + list[i].gerJarak(j) + " m), ");
                 }
                 System.out.println("");
             }
         }
         System.out.println("");
+    }
+
+    // percobaan 1 pertaynaan 5
+    public boolean isPath(int start, int end) throws Exception {
+        for (int i = 0; i < list[start].size(); i++) {
+            if (list[start].get(i) == end) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void updateJarak(int a, int t, int j)throws Exception{
+        for (int i = 0; i < list[a].size(); i++) {
+            if (list[a].get(i) == t) {
+                list[a].update(i, t, j);
+                // list[a].head.inputTujuan(t);
+                // list[a].head.inputJarak(j);
+                return;
+            }
+        }
+        System.out.println("Asal tidak ditemukan");
+    }
+
+    public void hitungEdge(){
+        int totEdge = 0;
+
+        for (int i = 0; i < vertex; i++) {
+            totEdge += list[i].size();
+        }
+
+        System.out.println("Total Edge dalam Graph: " + totEdge);
     }
 }
